@@ -9,12 +9,16 @@
 }
 
 
-/* =========================================================
-   RESET
-   ========================================================= */
+/* RESET */
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -22,7 +26,6 @@ html {
 }
 
 body {
-  margin: 0;
   background: var(--bg);
   color: var(--text);
 
@@ -30,6 +33,7 @@ body {
   font-weight: 400;
 
   -webkit-font-smoothing: antialiased;
+
   overflow-x: hidden;
 }
 
@@ -101,15 +105,13 @@ button {
 }
 
 
-/* ONE PROJECT = ONE SCREEN */
+/* ONE PROJECT = EXACTLY ONE SCREEN */
 
 .project {
   position: relative;
 
   width: 100%;
-
   height: 100svh;
-  min-height: 100vh;
 
   margin: 0;
   padding: 0;
@@ -397,9 +399,10 @@ button {
   }
 
 
+  /* Exactly one mobile viewport per project */
+
   .project {
     height: 100svh;
-    min-height: 100svh;
   }
 
 
