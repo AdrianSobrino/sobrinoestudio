@@ -24,30 +24,30 @@
 
     <section class="work-grid" id="work" aria-label="Selected work">
       <article class="project">
-        <a class="project-link" href="https://vimeo.com/1190068384" target="_blank" rel="noopener">
+        <button class="project-link" type="button" data-vimeo="1190068384" aria-label="Open video">
           <div class="thumb">
             <img src="https://vumbnail.com/1190068384.jpg" alt="Video project" loading="lazy">
-            <span class="play">Play</span>
+            <span class="play" aria-hidden="true">Play</span>
           </div>
-        </a>
+        </button>
       </article>
 
       <article class="project">
-        <a class="project-link" href="https://vimeo.com/1204092804" target="_blank" rel="noopener">
+        <button class="project-link" type="button" data-vimeo="1204092804" aria-label="Open video">
           <div class="thumb">
             <img src="https://vumbnail.com/1204092804.jpg" alt="Video project" loading="lazy">
-            <span class="play">Play</span>
+            <span class="play" aria-hidden="true">Play</span>
           </div>
-        </a>
+        </button>
       </article>
 
       <article class="project project-wide">
-        <a class="project-link" href="https://vimeo.com/1091736244" target="_blank" rel="noopener">
+        <button class="project-link" type="button" data-vimeo="1091736244" aria-label="Open video">
           <div class="thumb">
             <img src="https://vumbnail.com/1091736244.jpg" alt="Video project" loading="lazy">
-            <span class="play">Play</span>
+            <span class="play" aria-hidden="true">Play</span>
           </div>
-        </a>
+        </button>
       </article>
     </section>
 
@@ -62,6 +62,54 @@
 
     <footer><span>© <span id="year"></span> Sobrino Estudio</span></footer>
   </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-backdrop" data-close="true"></div>
+    <div class="video-dialog" role="dialog" aria-modal="true" aria-label="Video player">
+      <button class="close" type="button" aria-label="Close video" data-close="true">Close</button>
+      <div class="video-frame">
+        <iframe
+          id="vimeoPlayer"
+          src=""
+          title="Sobrino Estudio video"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('vimeoPlayer');
+    const openButtons = document.querySelectorAll('[data-vimeo]');
+    const closeButtons = document.querySelectorAll('[data-close]');
+
+    function openVideo(id) {
+      player.src = `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeVideo() {
+      player.src = '';
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    openButtons.forEach((button) => {
+      button.addEventListener('click', () => openVideo(button.dataset.vimeo));
+    });
+
+    closeButtons.forEach((button) => button.addEventListener('click', closeVideo));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeVideo();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
