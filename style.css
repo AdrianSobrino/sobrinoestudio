@@ -1,15 +1,19 @@
 /* =========================================================
-   SOBRINO ESTUDIO — PORTFOLIO
+   SOBRINO ESTUDIO
    ========================================================= */
 
 :root {
-  --bg: #ffffff;
+  --bg: #F2F0EF;
   --text: #111111;
   --muted: #777777;
-  --line: #e7e7e7;
   --page-padding: 28px;
   --max-width: 1800px;
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -23,8 +27,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -32,56 +38,54 @@ body.modal-open {
   overflow: hidden;
 }
 
+button {
+  font: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-button {
-  font: inherit;
-}
-
-main {
-  width: 100%;
-}
-
 
 /* =========================================================
-   HEADER
+   HEADER / NAVIGATION
    ========================================================= */
 
 .topbar {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
 
   width: 100%;
 
+  z-index: 20;
+
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
-  padding: var(--page-padding);
-
-  pointer-events: none;
+  padding: 28px var(--page-padding);
 }
 
 .topbar nav {
   display: flex;
-  gap: 24px;
-  pointer-events: auto;
+  justify-content: center;
+  align-items: center;
+
+  gap: 28px;
 }
 
 .topbar nav a {
   font-size: 13px;
   line-height: 1;
-  letter-spacing: 0.01em;
-  transition: opacity 0.2s ease;
+
+  transition:
+    opacity 0.2s ease;
 }
 
 .topbar nav a:hover {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 
@@ -91,35 +95,33 @@ main {
 
 .hero {
   width: 100%;
-  min-height: 42vh;
+  max-width: var(--max-width);
+
+  min-height: 44vh;
+
+  margin: 0 auto;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
 
-  padding: 170px var(--page-padding) 55px;
+  text-align: center;
 
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.eyebrow {
-  margin: 0 0 10px;
-
-  font-size: 13px;
-  line-height: 1.3;
-  color: var(--muted);
-
-  letter-spacing: 0.02em;
+  padding:
+    150px
+    var(--page-padding)
+    55px;
 }
 
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(58px, 10vw, 150px);
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 0.92;
+
   font-weight: 500;
+
+  letter-spacing: -0.055em;
 }
 
 
@@ -130,48 +132,64 @@ main {
 .work-grid {
   width: 100%;
   max-width: var(--max-width);
+
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
 }
 
+
+/* Each project is a full-width block.
+   No vertical gap between projects. */
+
 .project {
   width: 100%;
-  min-height: 92vh;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding:
+    0
+    var(--page-padding);
 
-  padding: 0 var(--page-padding) 8vh;
+  margin: 0;
 }
+
+
+/* Remove button defaults */
 
 .project-link {
   display: block;
 
   width: 100%;
-  max-width: 1700px;
 
   padding: 0;
   margin: 0;
 
   border: 0;
+
   background: transparent;
 
   cursor: pointer;
+
   text-align: left;
 }
+
+
+/* Image container */
 
 .thumb {
   position: relative;
 
   width: 100%;
+
   aspect-ratio: 16 / 9;
 
   overflow: hidden;
-  background: #ededed;
+
+  background: #dedad8;
 }
+
+
+/* Image */
 
 .thumb img {
   display: block;
@@ -186,65 +204,89 @@ main {
     opacity 0.4s ease;
 }
 
+
+/* Hover */
+
 .project-link:hover .thumb img {
   transform: scale(1.025);
 }
+
+
+/* Dark overlay on hover */
 
 .thumb::after {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background: rgba(0, 0, 0, 0);
 
-  transition: background 0.3s ease;
+  transition:
+    background 0.3s ease;
+
+  pointer-events: none;
 }
 
 .project-link:hover .thumb::after {
   background: rgba(0, 0, 0, 0.08);
 }
 
+
+/* =========================================================
+   PLAY BUTTON
+   ========================================================= */
+
 .play {
   position: absolute;
-  left: 50%;
+
   top: 50%;
+  left: 50%;
 
-  z-index: 2;
+  z-index: 3;
 
-  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 76px;
-  height: 76px;
+  transform: translate(-50%, -50%);
 
-  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 50%;
 
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.28);
 
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-
-  background: rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(4px);
-
-  opacity: 0.92;
 
   transition:
     transform 0.3s ease,
-    background 0.3s ease,
-    opacity 0.3s ease;
+    background 0.3s ease;
 }
 
+
+/* Simple triangle */
+
+.play-icon {
+  width: 0;
+  height: 0;
+
+  margin-left: 4px;
+
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 13px solid #ffffff;
+}
+
+
 .project-link:hover .play {
-  transform: translate(-50%, -50%) scale(1.05);
-  background: rgba(0, 0, 0, 0.22);
-  opacity: 1;
+  transform:
+    translate(-50%, -50%)
+    scale(1.08);
+
+  background: rgba(0, 0, 0, 0.42);
 }
 
 
@@ -253,47 +295,70 @@ main {
    ========================================================= */
 
 .contact {
-  padding: 18vh var(--page-padding) 13vh;
-
   max-width: var(--max-width);
+
   margin: 0 auto;
+
+  padding:
+    20vh
+    var(--page-padding)
+    15vh;
+
+  text-align: center;
 }
 
-.contact .eyebrow {
-  margin-bottom: 18px;
+
+.contact-label {
+  margin: 0 0 18px;
+
+  font-size: 13px;
+
+  color: var(--muted);
+
+  letter-spacing: 0.02em;
 }
+
 
 .email {
   display: inline-block;
 
-  font-size: clamp(28px, 4vw, 64px);
+  font-size: clamp(25px, 4vw, 60px);
+
   line-height: 1;
 
   letter-spacing: -0.04em;
 
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 
-  border-bottom: 1px solid currentColor;
+  border-bottom:
+    1px solid currentColor;
 
-  transition: opacity 0.2s ease;
+  transition:
+    opacity 0.2s ease;
 }
 
 .email:hover {
-  opacity: 0.5;
+  opacity: 0.45;
 }
+
 
 .links {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
 }
 
 .links a {
   font-size: 13px;
-  transition: opacity 0.2s ease;
+
+  transition:
+    opacity 0.2s ease;
 }
 
 .links a:hover {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 
@@ -302,15 +367,20 @@ main {
    ========================================================= */
 
 footer {
-  padding: 0 var(--page-padding) 28px;
-
   max-width: var(--max-width);
+
   margin: 0 auto;
+
+  padding:
+    0
+    var(--page-padding)
+    28px;
+
+  text-align: center;
 
   color: var(--muted);
 
   font-size: 11px;
-  line-height: 1.4;
 }
 
 
@@ -320,11 +390,13 @@ footer {
 
 .video-modal {
   position: fixed;
+
   inset: 0;
 
   z-index: 100;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -338,35 +410,43 @@ footer {
     visibility 0.3s ease;
 }
 
+
 .video-modal.is-open {
   visibility: visible;
   opacity: 1;
 }
 
+
 .video-backdrop {
   position: absolute;
+
   inset: 0;
 
   background: rgba(0, 0, 0, 0.94);
 }
 
+
 .video-dialog {
   position: relative;
+
   z-index: 2;
 
   width: min(96vw, 1700px);
 }
 
+
 .video-frame {
   position: relative;
 
   width: 100%;
+
   aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
   background: #000;
 }
+
 
 .video-frame iframe {
   display: block;
@@ -376,6 +456,7 @@ footer {
 
   border: 0;
 }
+
 
 .close {
   position: absolute;
@@ -388,17 +469,21 @@ footer {
   padding: 0;
 
   border: 0;
+
   background: transparent;
 
   color: #ffffff;
 
   font-size: 12px;
+
   cursor: pointer;
 
   opacity: 0.85;
 
-  transition: opacity 0.2s ease;
+  transition:
+    opacity 0.2s ease;
 }
+
 
 .close:hover {
   opacity: 1;
@@ -406,7 +491,7 @@ footer {
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -415,69 +500,94 @@ footer {
     --page-padding: 16px;
   }
 
+
   .topbar {
     padding-top: 20px;
   }
 
+
   .topbar nav {
-    gap: 16px;
+    gap: 18px;
   }
+
 
   .topbar nav a {
     font-size: 12px;
   }
 
+
   .hero {
     min-height: 38vh;
 
-    padding-top: 125px;
-    padding-bottom: 36px;
+    padding:
+      120px
+      var(--page-padding)
+      34px;
   }
+
 
   .hero h1 {
-    font-size: clamp(48px, 15vw, 88px);
-    letter-spacing: -0.06em;
+    font-size: clamp(46px, 14vw, 78px);
   }
+
 
   .project {
-    min-height: auto;
-
-    padding-bottom: 13vh;
+    padding:
+      0
+      var(--page-padding);
   }
+
 
   .thumb {
     aspect-ratio: 16 / 10;
   }
 
-  .play {
-    width: 62px;
-    height: 62px;
 
-    font-size: 10px;
+  .play {
+    width: 54px;
+    height: 54px;
   }
+
+
+  .play-icon {
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 11px;
+  }
+
 
   .contact {
-    padding-top: 12vh;
-    padding-bottom: 15vh;
+    padding:
+      14vh
+      var(--page-padding)
+      15vh;
   }
 
+
   .email {
-    font-size: clamp(24px, 7vw, 40px);
+    font-size: clamp(23px, 7vw, 40px);
 
     word-break: break-word;
   }
+
+
+  .links {
+    gap: 20px;
+  }
+
 
   .video-modal {
     padding: 12px;
   }
 
+
   .video-dialog {
     width: 100%;
   }
 
+
   .close {
     top: -30px;
-
     font-size: 11px;
   }
 
