@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sobrino Estudio — Film portfolio." />
+  <title>Sobrino Estudio — Film</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <a class="brand" href="#top">Sobrino Estudio</a>
+      <nav><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+    </header>
+
+    <section class="hero" id="top">
+      <p class="eyebrow">Film · Commercial · Branded Content</p>
+      <h1>Sobrino Estudio</h1>
+    </section>
+
+    <section class="work-grid" id="work" aria-label="Selected work">
+      <article class="project">
+        <a class="project-link" href="https://vimeo.com/1190068384" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://vumbnail.com/1190068384.jpg" alt="Video project" loading="lazy">
+            <span class="play">Play</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="project">
+        <a class="project-link" href="https://vimeo.com/1204092804" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://vumbnail.com/1204092804.jpg" alt="Video project" loading="lazy">
+            <span class="play">Play</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="project project-wide">
+        <a class="project-link" href="https://vimeo.com/1091736244" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://vumbnail.com/1091736244.jpg" alt="Video project" loading="lazy">
+            <span class="play">Play</span>
+          </div>
+        </a>
+      </article>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">Contact</p>
+      <a class="email" href="mailto:adrian@sobrinoestudio.com">adrian@sobrinoestudio.com</a>
+      <div class="links">
+        <a href="https://instagram.com/adrisobrino" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://vimeo.com/sobrinoestudio" target="_blank" rel="noopener">Vimeo</a>
+      </div>
+    </section>
+
+    <footer><span>© <span id="year"></span> Sobrino Estudio</span></footer>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
