@@ -71,7 +71,9 @@ button {
 }
 
 
-/* SOBRINO ESTUDIO */
+/* =========================================================
+   SOBRINO ESTUDIO — TOP LEFT
+   ========================================================= */
 
 .brand {
   position: absolute;
@@ -114,7 +116,6 @@ button {
   position: relative;
 
   width: 100%;
-
   height: 100svh;
 
   margin: 0;
@@ -170,6 +171,7 @@ button {
   object-fit: cover;
 
   transform: none;
+
   transition: none;
 }
 
@@ -180,6 +182,8 @@ button {
   transform: none;
 }
 
+
+/* NO OVERLAY */
 
 .thumb::after {
   display: none;
@@ -224,6 +228,8 @@ button {
 }
 
 
+/* SIMPLE PLAY TRIANGLE */
+
 .play-icon {
   width: 0;
   height: 0;
@@ -237,17 +243,16 @@ button {
 
 
 /* =========================================================
-   FIXED CONTACT — ONE LINE / BOTTOM RIGHT
+   FIXED CONTACT — CENTERED
    ========================================================= */
 
 .site-contact {
   position: fixed;
 
-  right: 28px;
+  left: 50%;
   bottom: 28px;
 
-  left: auto;
-  top: auto;
+  transform: translateX(-50%);
 
   z-index: 50;
 
@@ -256,18 +261,18 @@ button {
   flex-direction: row;
 
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 
   gap: 18px;
 
   width: max-content;
-  max-width: calc(100% - 56px);
+  max-width: calc(100% - 32px);
 
   color: var(--white);
 
   /*
-     Smaller than the main heading so the entire
-     contact line fits comfortably on mobile.
+     Small enough to remain readable as one line
+     on mobile.
   */
 
   font-size: clamp(11px, 1.25vw, 18px);
@@ -280,7 +285,7 @@ button {
 
   white-space: nowrap;
 
-  text-align: right;
+  text-align: center;
 
   text-shadow:
     0 1px 8px rgba(0, 0, 0, 0.22);
@@ -292,10 +297,11 @@ button {
 .site-contact a {
   display: inline-block;
 
+  flex: 0 0 auto;
+
   white-space: nowrap;
 
-  transition:
-    opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 
@@ -447,19 +453,25 @@ button {
   }
 
 
-  /* CONTACT — ONE LINE / BOTTOM RIGHT */
+  /* CONTACT — CENTERED */
 
   .site-contact {
-    right: 16px;
+    left: 50%;
+    right: auto;
     bottom: 18px;
 
-    left: auto;
-    top: auto;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
 
     gap: 9px;
 
     width: max-content;
-    max-width: calc(100% - 32px);
+    max-width: calc(100% - 24px);
 
     font-size: clamp(9px, 2.6vw, 13px);
 
@@ -468,6 +480,8 @@ button {
     letter-spacing: -0.02em;
 
     white-space: nowrap;
+
+    text-align: center;
   }
 
 
