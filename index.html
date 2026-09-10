@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="Sobrino Estudio — Film portfolio."
+    content="Sobrino Estudio — Producción audiovisual."
   />
 
-  <title>Sobrino Estudio — Film</title>
+  <title>Sobrino Estudio — Producción audiovisual</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,16 +24,23 @@
 
 <body>
 
+  <!-- FIXED HEADER -->
+  <header class="site-header">
+
+    <a class="brand" href="#work">
+      Sobrino Estudio
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <span class="descriptor">producción audiovisual</span>
+    </nav>
+
+  </header>
+
+
   <main>
-
-    <!-- NAVIGATION -->
-    <header class="topbar">
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
 
     <!-- WORK -->
     <section
@@ -43,7 +50,7 @@
     >
 
       <!-- PROJECT 1 -->
-      <article class="project project-first">
+      <article class="project">
 
         <button
           class="project-link"
@@ -69,13 +76,6 @@
           </div>
 
         </button>
-
-
-        <!-- TITLE OVER FIRST VIDEO -->
-        <div class="hero-title">
-          <p>Film</p>
-          <h1>Sobrino Estudio</h1>
-        </div>
 
       </article>
 
@@ -150,7 +150,9 @@
       id="contact"
     >
 
-      <p class="contact-label">Contact</p>
+      <p class="contact-label">
+        Contact
+      </p>
 
       <a
         class="email"
@@ -184,9 +186,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <span>
-        © <span id="year"></span> Sobrino Estudio
-      </span>
+      © <span id="year"></span> Sobrino Estudio
     </footer>
 
   </main>
@@ -266,7 +266,6 @@
       document.body.classList.add(
         "modal-open"
       );
-
     }
 
 
@@ -286,7 +285,6 @@
       document.body.classList.remove(
         "modal-open"
       );
-
     }
 
 
