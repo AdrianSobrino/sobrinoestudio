@@ -31,11 +31,9 @@
       Sobrino Estudio
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#work">proyectos</a>
-      <a href="#contact">contacto</a>
-      <span class="descriptor">producción audiovisual</span>
-    </nav>
+    <div class="descriptor">
+      producción audiovisual
+    </div>
 
   </header>
 
@@ -66,10 +64,7 @@
               alt="Film project 1"
             >
 
-            <span
-              class="play"
-              aria-hidden="true"
-            >
+            <span class="play" aria-hidden="true">
               <span class="play-icon"></span>
             </span>
 
@@ -97,10 +92,7 @@
               alt="Film project 2"
             >
 
-            <span
-              class="play"
-              aria-hidden="true"
-            >
+            <span class="play" aria-hidden="true">
               <span class="play-icon"></span>
             </span>
 
@@ -128,10 +120,7 @@
               alt="Film project 3"
             >
 
-            <span
-              class="play"
-              aria-hidden="true"
-            >
+            <span class="play" aria-hidden="true">
               <span class="play-icon"></span>
             </span>
 
@@ -143,53 +132,29 @@
 
     </section>
 
-
-    <!-- CONTACT -->
-    <section
-      class="contact"
-      id="contact"
-    >
-
-      <p class="contact-label">
-        Contact
-      </p>
-
-      <a
-        class="email"
-        href="mailto:adrian@sobrinoestudio.com"
-      >
-        adrian@sobrinoestudio.com
-      </a>
-
-      <div class="links">
-
-        <a
-          href="https://instagram.com/adrisobrino"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
-
-        <a
-          href="https://vimeo.com/sobrinoestudio"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vimeo
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-      © <span id="year"></span> Sobrino Estudio
-    </footer>
-
   </main>
+
+
+  <!-- FIXED CONTACT -->
+  <footer class="site-contact">
+
+    <a href="mailto:adrian@sobrinoestudio.com">
+      adrian@sobrinoestudio.com
+    </a>
+
+    <a
+      href="https://instagram.com/adrisobrino"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @adrisobrino
+    </a>
+
+    <a href="tel:+34670359658">
+      670 359 658
+    </a>
+
+  </footer>
 
 
   <!-- VIDEO MODAL -->
@@ -238,7 +203,6 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
   <script>
 
     const modal = document.getElementById("videoModal");
@@ -257,15 +221,9 @@
         `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
 
       modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
 
-      modal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.classList.add(
-        "modal-open"
-      );
     }
 
 
@@ -273,18 +231,10 @@
 
       player.src = "";
 
-      modal.classList.remove(
-        "is-open"
-      );
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
 
-      modal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.classList.remove(
-        "modal-open"
-      );
     }
 
 
@@ -292,11 +242,7 @@
 
       button.addEventListener(
         "click",
-        () => {
-          openVideo(
-            button.dataset.vimeo
-          );
-        }
+        () => openVideo(button.dataset.vimeo)
       );
 
     });
@@ -325,10 +271,6 @@
 
       }
     );
-
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
 
   </script>
 
