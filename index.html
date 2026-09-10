@@ -1,511 +1,401 @@
-/* =========================================================
-   SOBRINO ESTUDIO
-   ========================================================= */
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
 
-:root {
-  --bg: #F2F0EF;
-  --text: #111111;
-  --white: #ffffff;
-}
+  <meta
+    name="description"
+    content="Sobrino Estudio — Producción audiovisual."
+  />
 
+  <title>Sobrino Estudio — Producción audiovisual</title>
 
-/* =========================================================
-   RESET
-   ========================================================= */
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2F0EF'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,Arial,Helvetica,sans-serif' font-size='48' font-weight='500' fill='%23111111'%3ES%3C/text%3E%3C/svg%3E"
+  >
 
-* {
-  box-sizing: border-box;
-}
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-html {
-  scroll-behavior: smooth;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-body {
-  background: var(--bg);
-  color: var(--text);
+  <!-- STYLESHEET -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  font-family: "Inter", Arial, sans-serif;
-  font-weight: 400;
 
-  -webkit-font-smoothing: antialiased;
+<body>
 
-  overflow-x: hidden;
-}
+  <!-- =====================================================
+       FIXED HEADER
+       ===================================================== -->
 
-body.modal-open {
-  overflow: hidden;
-}
+  <header class="site-header">
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    <a
+      class="brand"
+      href="#work"
+      aria-label="Sobrino Estudio"
+    >
+      Sobrino Estudio
+    </a>
 
-button {
-  font: inherit;
-}
+  </header>
 
 
-/* =========================================================
-   FIXED HEADER
-   ========================================================= */
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
 
-.site-header {
-  position: fixed;
+  <main>
 
-  top: 0;
-  left: 0;
+    <!-- WORK -->
+    <section
+      class="work"
+      id="work"
+      aria-label="Selected work"
+    >
 
-  width: 100%;
 
-  z-index: 50;
+      <!-- =================================================
+           PROJECT 1
+           Vimeo: 1091736244
+           Image: imagen3.jpg
+           ================================================= -->
 
-  pointer-events: none;
-}
+      <article class="project">
 
+        <button
+          class="project-link"
+          type="button"
+          data-vimeo="1091736244"
+          aria-label="Open project 1"
+        >
 
-/* =========================================================
-   SOBRINO ESTUDIO — TOP LEFT
-   ========================================================= */
+          <div class="thumb">
 
-.brand {
-  position: absolute;
+            <img
+              src="images/imagen3.jpg"
+              alt="Film project 1"
+            >
 
-  top: 28px;
-  left: 28px;
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
 
-  color: var(--white);
+          </div>
 
-  font-size: clamp(28px, 4vw, 58px);
+        </button>
 
-  line-height: 0.95;
+      </article>
 
-  font-weight: 500;
 
-  letter-spacing: -0.055em;
+      <!-- =================================================
+           PROJECT 2
+           Vimeo: 1204092804
+           Image: imagen2.jpg
+           ================================================= -->
 
-  text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.22);
+      <article class="project">
 
-  pointer-events: auto;
-}
+        <button
+          class="project-link"
+          type="button"
+          data-vimeo="1204092804"
+          aria-label="Open project 2"
+        >
 
+          <div class="thumb">
 
-/* =========================================================
-   WORK
-   ========================================================= */
+            <img
+              src="images/imagen2.jpg"
+              alt="Film project 2"
+            >
 
-.work {
-  width: 100%;
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
 
-  margin: 0;
-  padding: 0;
-}
+          </div>
 
+        </button>
 
-/* ONE PROJECT = ONE SCREEN */
+      </article>
 
-.project {
-  position: relative;
 
-  width: 100%;
-  height: 100svh;
+      <!-- =================================================
+           PROJECT 3
+           Vimeo: 1190068384
+           Image: imagen1.jpg
+           ================================================= -->
 
-  margin: 0;
-  padding: 0;
+      <article class="project">
 
-  overflow: hidden;
-}
+        <button
+          class="project-link"
+          type="button"
+          data-vimeo="1190068384"
+          aria-label="Open project 3"
+        >
 
+          <div class="thumb">
 
-/* =========================================================
-   FULLSCREEN IMAGE
-   ========================================================= */
+            <img
+              src="images/imagen1.jpg"
+              alt="Film project 3"
+            >
 
-.project-link {
-  position: absolute;
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
 
-  inset: 0;
+          </div>
 
-  width: 100%;
-  height: 100%;
+        </button>
 
-  margin: 0;
-  padding: 0;
+      </article>
 
-  border: 0;
 
-  background: transparent;
+    </section>
 
-  cursor: pointer;
-}
+  </main>
 
 
-.thumb {
-  position: absolute;
+  <!-- =====================================================
+       FIXED CONTACT
+       ===================================================== -->
 
-  inset: 0;
+  <footer class="site-contact">
 
-  width: 100%;
-  height: 100%;
+    <a
+      href="mailto:adrian@sobrinoestudio.com"
+    >
+      adrian@sobrinoestudio.com
+    </a>
 
-  overflow: hidden;
+    <a
+      href="https://instagram.com/adrisobrino"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @adrisobrino
+    </a>
 
-  background: #dedad8;
-}
+    <a
+      href="tel:+34670359658"
+    >
+      670 359 658
+    </a>
 
+  </footer>
 
-.thumb img {
-  display: block;
 
-  width: 100%;
-  height: 100%;
+  <!-- =====================================================
+       VIDEO MODAL
+       ===================================================== -->
 
-  object-fit: cover;
+  <div
+    class="video-modal"
+    id="videoModal"
+    aria-hidden="true"
+  >
 
-  transform: none;
+    <!-- DARK BACKGROUND -->
 
-  transition: none;
-}
+    <div
+      class="video-backdrop"
+      data-close="true"
+    ></div>
 
 
-/* NO MOVEMENT ON HOVER */
+    <!-- VIDEO CONTAINER -->
 
-.project-link:hover .thumb img {
-  transform: none;
-}
+    <div
+      class="video-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video player"
+    >
 
+      <!-- CLOSE -->
 
-/* NO OVERLAY */
+      <button
+        class="close"
+        type="button"
+        aria-label="Close video"
+        data-close="true"
+      >
+        Close
+      </button>
 
-.thumb::after {
-  display: none;
-}
 
+      <!-- VIMEO -->
 
-/* =========================================================
-   PLAY ICON
-   ========================================================= */
+      <div class="video-frame">
 
-.play {
-  position: absolute;
+        <iframe
+          id="vimeoPlayer"
+          src=""
+          title="Sobrino Estudio video"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
 
-  top: 50%;
-  left: 50%;
+      </div>
 
-  z-index: 5;
+    </div>
 
-  width: 64px;
-  height: 64px;
+  </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  transform: translate(-50%, -50%);
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-  border-radius: 50%;
+  <script>
 
-  background: rgba(0, 0, 0, 0.25);
+    const modal =
+      document.getElementById("videoModal");
 
-  backdrop-filter: blur(3px);
+    const player =
+      document.getElementById("vimeoPlayer");
 
-  transition: none;
-}
+    const openButtons =
+      document.querySelectorAll("[data-vimeo]");
 
+    const closeButtons =
+      document.querySelectorAll("[data-close]");
 
-.project-link:hover .play {
-  transform: translate(-50%, -50%);
 
-  background: rgba(0, 0, 0, 0.25);
-}
+    /*
+     * Open Vimeo video
+     */
 
+    function openVideo(id) {
 
-/* SIMPLE PLAY TRIANGLE */
+      player.src =
+        `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
 
-.play-icon {
-  width: 0;
-  height: 0;
+      modal.classList.add("is-open");
 
-  margin-left: 4px;
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-left: 13px solid #ffffff;
-}
+      document.body.classList.add(
+        "modal-open"
+      );
 
+    }
 
-/* =========================================================
-   FIXED CONTACT — CENTERED
-   ========================================================= */
 
-.site-contact {
-  position: fixed;
+    /*
+     * Close Vimeo video
+     */
 
-  left: 50%;
-  bottom: 28px;
+    function closeVideo() {
 
-  transform: translateX(-50%);
+      player.src = "";
 
-  z-index: 50;
+      modal.classList.remove(
+        "is-open"
+      );
 
-  display: flex;
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
-  flex-direction: row;
+      document.body.classList.remove(
+        "modal-open"
+      );
 
-  align-items: center;
-  justify-content: center;
+    }
 
-  gap: 18px;
 
-  width: max-content;
-  max-width: calc(100% - 32px);
+    /*
+     * Open video when clicking a project
+     */
 
-  color: var(--white);
+    openButtons.forEach((button) => {
 
-  /*
-     Small enough to remain readable as one line
-     on mobile.
-  */
+      button.addEventListener(
+        "click",
+        () => {
 
-  font-size: clamp(11px, 1.25vw, 18px);
+          openVideo(
+            button.dataset.vimeo
+          );
 
-  line-height: 1;
+        }
+      );
 
-  font-weight: 500;
+    });
 
-  letter-spacing: -0.025em;
 
-  white-space: nowrap;
+    /*
+     * Close video
+     */
 
-  text-align: center;
+    closeButtons.forEach((button) => {
 
-  text-shadow:
-    0 1px 8px rgba(0, 0, 0, 0.22);
+      button.addEventListener(
+        "click",
+        closeVideo
+      );
 
-  pointer-events: auto;
-}
+    });
 
 
-.site-contact a {
-  display: inline-block;
+    /*
+     * Close with Escape
+     */
 
-  flex: 0 0 auto;
+    document.addEventListener(
+      "keydown",
+      (event) => {
 
-  white-space: nowrap;
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("is-open")
+        ) {
 
-  transition: opacity 0.2s ease;
-}
+          closeVideo();
 
+        }
 
-.site-contact a:hover {
-  opacity: 0.55;
-}
+      }
+    );
 
+  </script>
 
-/* =========================================================
-   VIDEO MODAL
-   ========================================================= */
-
-.video-modal {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 100;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-
-  visibility: hidden;
-  opacity: 0;
-
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
-}
-
-
-.video-modal.is-open {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-.video-backdrop {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.96);
-}
-
-
-.video-dialog {
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1800px;
-}
-
-
-.video-frame {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
-  overflow: hidden;
-
-  background: #000000;
-}
-
-
-.video-frame iframe {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border: 0;
-}
-
-
-.close {
-  position: absolute;
-
-  top: -40px;
-  right: 0;
-
-  z-index: 5;
-
-  margin: 0;
-  padding: 0;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #ffffff;
-
-  font-size: 12px;
-
-  cursor: pointer;
-
-  opacity: 0.85;
-}
-
-
-.close:hover {
-  opacity: 1;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* SOBRINO ESTUDIO */
-
-  .brand {
-    top: 20px;
-    left: 16px;
-
-    font-size: clamp(25px, 8vw, 42px);
-  }
-
-
-  /* ONE PROJECT = ONE MOBILE SCREEN */
-
-  .project {
-    height: 100svh;
-  }
-
-
-  /* PLAY */
-
-  .play {
-    width: 56px;
-    height: 56px;
-  }
-
-
-  .play-icon {
-    border-top-width: 8px;
-    border-bottom-width: 8px;
-    border-left-width: 11px;
-  }
-
-
-  /* CONTACT — CENTERED */
-
-  .site-contact {
-    left: 50%;
-    right: auto;
-    bottom: 18px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    width: max-content;
-    max-width: calc(100% - 24px);
-
-    font-size: clamp(9px, 2.6vw, 13px);
-
-    line-height: 1;
-
-    letter-spacing: -0.02em;
-
-    white-space: nowrap;
-
-    text-align: center;
-  }
-
-
-  .site-contact a {
-    white-space: nowrap;
-  }
-
-
-  /* VIDEO MODAL */
-
-  .video-modal {
-    padding: 10px;
-  }
-
-
-  .video-dialog {
-    width: 100%;
-  }
-
-
-  .close {
-    top: -30px;
-
-    font-size: 11px;
-  }
-
-}
+</body>
+</html>
