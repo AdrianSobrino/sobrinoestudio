@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
 
   <meta
     name="description"
@@ -11,8 +14,19 @@
 
   <title>Sobrino Estudio — Producción audiovisual</title>
 
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2F0EF'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,Arial,Helvetica,sans-serif' font-size='48' font-weight='500' fill='%23111111'%3ES%3C/text%3E%3C/svg%3E"
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
@@ -27,7 +41,11 @@
   <!-- FIXED HEADER -->
   <header class="site-header">
 
-    <a class="brand" href="#work">
+    <a
+      class="brand"
+      href="#work"
+      aria-label="Sobrino Estudio"
+    >
       Sobrino Estudio
     </a>
 
@@ -60,7 +78,10 @@
               alt="Film project 1"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -88,7 +109,10 @@
               alt="Film project 2"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -116,7 +140,10 @@
               alt="Film project 3"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -134,7 +161,9 @@
   <!-- FIXED CONTACT -->
   <footer class="site-contact">
 
-    <a href="mailto:adrian@sobrinoestudio.com">
+    <a
+      href="mailto:adrian@sobrinoestudio.com"
+    >
       adrian@sobrinoestudio.com
     </a>
 
@@ -146,7 +175,9 @@
       @adrisobrino
     </a>
 
-    <a href="tel:+34670359658">
+    <a
+      href="tel:+34670359658"
+    >
       670 359 658
     </a>
 
@@ -199,10 +230,14 @@
   </div>
 
 
+  <!-- JAVASCRIPT -->
   <script>
 
-    const modal = document.getElementById("videoModal");
-    const player = document.getElementById("vimeoPlayer");
+    const modal =
+      document.getElementById("videoModal");
+
+    const player =
+      document.getElementById("vimeoPlayer");
 
     const openButtons =
       document.querySelectorAll("[data-vimeo]");
@@ -217,9 +252,15 @@
         `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
 
       modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
 
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
     }
 
 
@@ -227,10 +268,18 @@
 
       player.src = "";
 
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("modal-open");
+      modal.classList.remove(
+        "is-open"
+      );
 
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
     }
 
 
@@ -238,7 +287,11 @@
 
       button.addEventListener(
         "click",
-        () => openVideo(button.dataset.vimeo)
+        () => {
+          openVideo(
+            button.dataset.vimeo
+          );
+        }
       );
 
     });
