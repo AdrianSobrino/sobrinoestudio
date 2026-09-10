@@ -9,7 +9,9 @@
 }
 
 
-/* RESET */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -69,7 +71,7 @@ button {
 }
 
 
-/* SOBRINO ESTUDIO */
+/* SOBRINO ESTUDIO — TOP LEFT */
 
 .brand {
   position: absolute;
@@ -105,7 +107,7 @@ button {
 }
 
 
-/* ONE PROJECT = EXACTLY ONE SCREEN */
+/* ONE PROJECT = ONE SCREEN */
 
 .project {
   position: relative;
@@ -170,7 +172,7 @@ button {
 }
 
 
-/* NO MOVEMENT ON HOVER */
+/* NO IMAGE MOVEMENT ON HOVER */
 
 .project-link:hover .thumb img {
   transform: none;
@@ -233,44 +235,59 @@ button {
 
 
 /* =========================================================
-   FIXED CONTACT
+   FIXED CONTACT — BOTTOM RIGHT
    ========================================================= */
 
 .site-contact {
   position: fixed;
 
-  left: 50%;
+  right: 28px;
   bottom: 28px;
 
-  transform: translateX(-50%);
+  left: auto;
+  top: auto;
 
   z-index: 50;
 
   display: flex;
+  flex-direction: column;
 
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 
-  gap: 24px;
+  gap: 5px;
 
-  width: max-content;
-  max-width: calc(100% - 56px);
-
-  white-space: nowrap;
+  width: auto;
 
   color: var(--white);
 
-  font-size: clamp(12px, 1.15vw, 16px);
-  line-height: 1;
+  /* Same scale as Sobrino Estudio */
 
-  letter-spacing: -0.015em;
+  font-size: clamp(28px, 4vw, 58px);
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+
+  text-align: right;
+
+  white-space: nowrap;
 
   text-shadow:
-    0 1px 8px rgba(0, 0, 0, 0.22);
+    0 2px 12px rgba(0, 0, 0, 0.22);
+
+  pointer-events: auto;
 }
 
 
 .site-contact a {
+  display: block;
+
+  width: auto;
+
+  text-align: right;
+
   transition: opacity 0.2s ease;
 }
 
@@ -391,6 +408,8 @@ button {
 
 @media (max-width: 700px) {
 
+  /* SOBRINO ESTUDIO — TOP LEFT */
+
   .brand {
     top: 20px;
     left: 16px;
@@ -399,12 +418,14 @@ button {
   }
 
 
-  /* Exactly one mobile viewport per project */
+  /* ONE PROJECT = ONE MOBILE SCREEN */
 
   .project {
     height: 100svh;
   }
 
+
+  /* PLAY */
 
   .play {
     width: 56px;
@@ -419,18 +440,39 @@ button {
   }
 
 
+  /* CONTACT — BOTTOM RIGHT */
+
   .site-contact {
+    right: 16px;
     bottom: 18px;
 
-    gap: 12px;
+    left: auto;
+    top: auto;
 
-    max-width: calc(100% - 24px);
+    align-items: flex-end;
 
-    font-size: clamp(10px, 2.8vw, 13px);
+    gap: 4px;
 
-    letter-spacing: -0.02em;
+    /*
+       Same responsive scale as the brand.
+    */
+
+    font-size: clamp(25px, 8vw, 42px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    text-align: right;
   }
 
+
+  .site-contact a {
+    text-align: right;
+  }
+
+
+  /* VIDEO MODAL */
 
   .video-modal {
     padding: 10px;
