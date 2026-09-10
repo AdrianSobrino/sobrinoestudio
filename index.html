@@ -3,100 +3,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sobrino Estudio — Film portfolio." />
+  <meta
+    name="description"
+    content="Sobrino Estudio — Film portfolio."
+  />
+
   <title>Sobrino Estudio — Film</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
   <main>
 
     <!-- HEADER -->
     <header class="topbar">
-      <div></div>
-
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
+
     <!-- INTRO -->
     <section class="hero" id="top">
-      <p class="eyebrow">Film</p>
       <h1>Sobrino Estudio</h1>
     </section>
 
+
     <!-- WORK -->
-    <section class="work-grid" id="work" aria-label="Selected work">
+    <section
+      class="work-grid"
+      id="work"
+      aria-label="Selected work"
+    >
 
       <!-- PROJECT 1 -->
       <article class="project">
+
         <button
           class="project-link"
           type="button"
           data-vimeo="1190068384"
-          aria-label="Open video"
+          aria-label="Open project 1"
         >
+
           <div class="thumb">
+
             <img
               src="images/imagen1.jpg"
-              alt="Video project"
+              alt="Film project 1"
               loading="lazy"
             >
-            <span class="play" aria-hidden="true">Play</span>
+
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
+
           </div>
+
         </button>
+
       </article>
+
 
       <!-- PROJECT 2 -->
       <article class="project">
+
         <button
           class="project-link"
           type="button"
           data-vimeo="1204092804"
-          aria-label="Open video"
+          aria-label="Open project 2"
         >
+
           <div class="thumb">
+
             <img
               src="images/imagen2.jpg"
-              alt="Video project"
+              alt="Film project 2"
               loading="lazy"
             >
-            <span class="play" aria-hidden="true">Play</span>
+
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
+
           </div>
+
         </button>
+
       </article>
+
 
       <!-- PROJECT 3 -->
       <article class="project">
+
         <button
           class="project-link"
           type="button"
           data-vimeo="1091736244"
-          aria-label="Open video"
+          aria-label="Open project 3"
         >
+
           <div class="thumb">
+
             <img
               src="images/imagen3.jpg"
-              alt="Video project"
+              alt="Film project 3"
               loading="lazy"
             >
-            <span class="play" aria-hidden="true">Play</span>
+
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
+
           </div>
+
         </button>
+
       </article>
 
     </section>
 
+
     <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <p class="eyebrow">Contact</p>
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <p class="contact-label">Contact</p>
 
       <a
         class="email"
@@ -106,10 +161,11 @@
       </a>
 
       <div class="links">
+
         <a
           href="https://instagram.com/adrisobrino"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           Instagram
         </a>
@@ -117,19 +173,25 @@
         <a
           href="https://vimeo.com/sobrinoestudio"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           Vimeo
         </a>
+
       </div>
+
     </section>
+
 
     <!-- FOOTER -->
     <footer>
-      <span>© <span id="year"></span> Sobrino Estudio</span>
+      <span>
+        © <span id="year"></span> Sobrino Estudio
+      </span>
     </footer>
 
   </main>
+
 
   <!-- VIDEO MODAL -->
   <div
@@ -137,6 +199,7 @@
     id="videoModal"
     aria-hidden="true"
   >
+
     <div
       class="video-backdrop"
       data-close="true"
@@ -148,6 +211,7 @@
       aria-modal="true"
       aria-label="Video player"
     >
+
       <button
         class="close"
         type="button"
@@ -158,63 +222,115 @@
       </button>
 
       <div class="video-frame">
+
         <iframe
           id="vimeoPlayer"
           src=""
           title="Sobrino Estudio video"
           frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen
+        ></iframe>
+
       </div>
+
     </div>
+
   </div>
+
 
   <!-- JAVASCRIPT -->
   <script>
-    const modal = document.getElementById('videoModal');
-    const player = document.getElementById('vimeoPlayer');
-    const openButtons = document.querySelectorAll('[data-vimeo]');
-    const closeButtons = document.querySelectorAll('[data-close]');
+
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("vimeoPlayer");
+
+    const openButtons =
+      document.querySelectorAll("[data-vimeo]");
+
+    const closeButtons =
+      document.querySelectorAll("[data-close]");
+
 
     function openVideo(id) {
+
       player.src =
         `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
 
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
+      modal.classList.add("is-open");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
     }
+
 
     function closeVideo() {
-      player.src = '';
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
+
+      player.src = "";
+
+      modal.classList.remove(
+        "is-open"
+      );
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
     }
 
+
     openButtons.forEach((button) => {
+
       button.addEventListener(
-        'click',
-        () => openVideo(button.dataset.vimeo)
+        "click",
+        () => {
+          openVideo(
+            button.dataset.vimeo
+          );
+        }
       );
+
     });
+
 
     closeButtons.forEach((button) => {
-      button.addEventListener('click', closeVideo);
+
+      button.addEventListener(
+        "click",
+        closeVideo
+      );
+
     });
 
-    document.addEventListener('keydown', (event) => {
-      if (
-        event.key === 'Escape' &&
-        modal.classList.contains('is-open')
-      ) {
-        closeVideo();
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("is-open")
+        ) {
+          closeVideo();
+        }
+
       }
-    });
+    );
 
-    document.getElementById('year').textContent =
+
+    document.getElementById("year").textContent =
       new Date().getFullYear();
+
   </script>
 
 </body>
