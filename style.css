@@ -9,7 +9,9 @@
 }
 
 
-/* RESET */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -21,7 +23,6 @@ html {
 
 body {
   margin: 0;
-
   background: var(--bg);
   color: var(--text);
 
@@ -85,28 +86,6 @@ button {
     0 2px 12px rgba(0, 0, 0, 0.22);
 
   pointer-events: auto;
-}
-
-
-/* PRODUCCIÓN AUDIOVISUAL */
-
-.descriptor {
-  position: absolute;
-
-  top: 31px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  color: var(--white);
-
-  font-size: 13px;
-  line-height: 1;
-
-  white-space: nowrap;
-
-  text-shadow:
-    0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -202,7 +181,7 @@ button {
 
 
 /* =========================================================
-   PLAY
+   PLAY ICON
    ========================================================= */
 
 .play {
@@ -278,10 +257,6 @@ button {
   white-space: nowrap;
 
   color: var(--white);
-
-  /*
-     Deliberately smaller than the brand.
-  */
 
   font-size: clamp(12px, 1.15vw, 16px);
   line-height: 1;
@@ -419,23 +394,6 @@ button {
     left: 16px;
 
     font-size: clamp(25px, 8vw, 42px);
-  }
-
-
-  .descriptor {
-    top: 22px;
-
-    /*
-       Move it to the right on small screens so it doesn't
-       collide with the brand.
-    */
-
-    left: auto;
-    right: 16px;
-
-    transform: none;
-
-    font-size: 10px;
   }
 
 
