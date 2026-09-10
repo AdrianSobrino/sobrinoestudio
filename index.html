@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta
     name="description"
     content="Sobrino Estudio — Film portfolio."
@@ -25,7 +26,7 @@
 
   <main>
 
-    <!-- HEADER -->
+    <!-- NAVIGATION -->
     <header class="topbar">
       <nav aria-label="Main navigation">
         <a href="#work">Work</a>
@@ -34,35 +35,28 @@
     </header>
 
 
-    <!-- INTRO -->
-    <section class="hero" id="top">
-      <h1>Sobrino Estudio</h1>
-    </section>
-
-
     <!-- WORK -->
     <section
-      class="work-grid"
+      class="work"
       id="work"
       aria-label="Selected work"
     >
 
       <!-- PROJECT 1 -->
-      <article class="project">
+      <article class="project project-first">
 
         <button
           class="project-link"
           type="button"
-          data-vimeo="1190068384"
+          data-vimeo="1091736244"
           aria-label="Open project 1"
         >
 
           <div class="thumb">
 
             <img
-              src="images/imagen1.jpg"
+              src="images/imagen3.jpg"
               alt="Film project 1"
-              loading="lazy"
             >
 
             <span
@@ -75,6 +69,13 @@
           </div>
 
         </button>
+
+
+        <!-- TITLE OVER FIRST VIDEO -->
+        <div class="hero-title">
+          <p>Film</p>
+          <h1>Sobrino Estudio</h1>
+        </div>
 
       </article>
 
@@ -94,7 +95,6 @@
             <img
               src="images/imagen2.jpg"
               alt="Film project 2"
-              loading="lazy"
             >
 
             <span
@@ -117,16 +117,15 @@
         <button
           class="project-link"
           type="button"
-          data-vimeo="1091736244"
+          data-vimeo="1190068384"
           aria-label="Open project 3"
         >
 
           <div class="thumb">
 
             <img
-              src="images/imagen3.jpg"
+              src="images/imagen1.jpg"
               alt="Film project 3"
-              loading="lazy"
             >
 
             <span
@@ -267,6 +266,7 @@
       document.body.classList.add(
         "modal-open"
       );
+
     }
 
 
@@ -286,6 +286,7 @@
       document.body.classList.remove(
         "modal-open"
       );
+
     }
 
 
