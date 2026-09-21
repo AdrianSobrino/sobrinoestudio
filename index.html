@@ -66,7 +66,6 @@
 
   <main>
 
-    <!-- WORK -->
     <section
       class="work"
       id="work"
@@ -182,6 +181,42 @@
       </article>
 
 
+      <!-- =================================================
+           PROJECT 4
+           Vimeo: 1037787171
+           Image: imagen4.jpg
+           ================================================= -->
+
+      <article class="project">
+
+        <button
+          class="project-link"
+          type="button"
+          data-vimeo="1037787171"
+          aria-label="Open project 4"
+        >
+
+          <div class="thumb">
+
+            <img
+              src="images/imagen4.jpg"
+              alt="Film project 4"
+            >
+
+            <span
+              class="play"
+              aria-hidden="true"
+            >
+              <span class="play-icon"></span>
+            </span>
+
+          </div>
+
+        </button>
+
+      </article>
+
+
     </section>
 
   </main>
@@ -226,15 +261,11 @@
     aria-hidden="true"
   >
 
-    <!-- DARK BACKGROUND -->
-
     <div
       class="video-backdrop"
       data-close="true"
     ></div>
 
-
-    <!-- VIDEO CONTAINER -->
 
     <div
       class="video-dialog"
@@ -242,8 +273,6 @@
       aria-modal="true"
       aria-label="Video player"
     >
-
-      <!-- CLOSE -->
 
       <button
         class="close"
@@ -254,8 +283,6 @@
         Close
       </button>
 
-
-      <!-- VIMEO -->
 
       <div class="video-frame">
 
@@ -294,10 +321,6 @@
       document.querySelectorAll("[data-close]");
 
 
-    /*
-     * Open Vimeo video
-     */
-
     function openVideo(id) {
 
       player.src =
@@ -316,10 +339,6 @@
 
     }
 
-
-    /*
-     * Close Vimeo video
-     */
 
     function closeVideo() {
 
@@ -341,10 +360,6 @@
     }
 
 
-    /*
-     * Open video when clicking a project
-     */
-
     openButtons.forEach((button) => {
 
       button.addEventListener(
@@ -361,10 +376,6 @@
     });
 
 
-    /*
-     * Close video
-     */
-
     closeButtons.forEach((button) => {
 
       button.addEventListener(
@@ -374,10 +385,6 @@
 
     });
 
-
-    /*
-     * Close with Escape
-     */
 
     document.addEventListener(
       "keydown",
