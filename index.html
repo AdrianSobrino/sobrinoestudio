@@ -39,17 +39,249 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
+  <!-- EXISTING CSS -->
   <link
     rel="stylesheet"
     href="style.css"
   >
+
+  <!-- =====================================================
+       LIQUID GLASS OVERRIDES
+       ===================================================== -->
+
+  <style>
+
+    /* -----------------------------------------------------
+       GLASS TOKENS
+       ----------------------------------------------------- */
+
+    :root {
+      --glass-white: rgba(255, 255, 255, 0.92);
+      --glass-soft: rgba(255, 255, 255, 0.10);
+      --glass-border: rgba(255, 255, 255, 0.20);
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER / BRAND
+       ----------------------------------------------------- */
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 8px 14px 10px;
+
+      border-radius: 18px;
+
+      color: var(--glass-white);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.17),
+          rgba(255, 255, 255, 0.035)
+        );
+
+      border:
+        1px solid var(--glass-border);
+
+      backdrop-filter:
+        blur(18px)
+        saturate(150%);
+
+      -webkit-backdrop-filter:
+        blur(18px)
+        saturate(150%);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+      text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.18);
+
+      transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.2s ease;
+    }
+
+
+    .brand::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          115deg,
+          rgba(255, 255, 255, 0.22),
+          transparent 35%,
+          transparent 65%,
+          rgba(255, 255, 255, 0.08)
+        );
+
+      opacity: 0.55;
+
+      pointer-events: none;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+       ----------------------------------------------------- */
+
+    .site-contact {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px 14px 9px;
+
+      border-radius: 18px;
+
+      color: var(--glass-white);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.035)
+        );
+
+      border:
+        1px solid var(--glass-border);
+
+      backdrop-filter:
+        blur(18px)
+        saturate(150%);
+
+      -webkit-backdrop-filter:
+        blur(18px)
+        saturate(150%);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.20),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+      text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.18);
+
+      transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.2s ease;
+    }
+
+
+    .site-contact::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          110deg,
+          rgba(255, 255, 255, 0.18),
+          transparent 32%,
+          transparent 66%,
+          rgba(255, 255, 255, 0.06)
+        );
+
+      opacity: 0.5;
+
+      pointer-events: none;
+    }
+
+
+    /* -----------------------------------------------------
+       SCROLL-BASED GLASS MOVEMENT
+       ----------------------------------------------------- */
+
+    .brand,
+    .site-contact {
+      --glass-lift: 0px;
+      --glass-blur: 18px;
+    }
+
+
+    body.glass-scroll .brand {
+      transform:
+        translateY(var(--glass-lift))
+        translateZ(0);
+    }
+
+
+    body.glass-scroll .site-contact {
+      transform:
+        translateX(-50%)
+        translateY(var(--glass-lift))
+        translateZ(0);
+    }
+
+
+    /* -----------------------------------------------------
+       ACCESSIBILITY
+       ----------------------------------------------------- */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .brand,
+      .site-contact {
+        transition: none;
+        transform: none !important;
+      }
+
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE
+       ----------------------------------------------------- */
+
+    @media (max-width: 700px) {
+
+      .brand {
+        padding: 6px 10px 8px;
+
+        border-radius: 14px;
+      }
+
+
+      .site-contact {
+        padding: 6px 10px 7px;
+
+        border-radius: 14px;
+
+        gap: 9px;
+      }
+
+    }
+
+  </style>
 </head>
 
 
-<body>
+<body class="glass-scroll">
 
-  <!-- FIXED HEADER -->
+  <!-- =====================================================
+       FIXED HEADER
+       ===================================================== -->
+
   <header class="site-header">
 
     <a
@@ -63,7 +295,10 @@
   </header>
 
 
-  <!-- PROJECTS -->
+  <!-- =====================================================
+       WORK
+       ===================================================== -->
+
   <main>
 
     <section
@@ -92,7 +327,10 @@
               alt="Sobrino Estudio project 1"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -122,7 +360,10 @@
               alt="Sobrino Estudio project 2"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -152,7 +393,10 @@
               alt="Sobrino Estudio project 3"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -182,7 +426,10 @@
               alt="Sobrino Estudio project 4"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -212,7 +459,10 @@
               alt="Sobrino Estudio project 5"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -242,7 +492,10 @@
               alt="Sobrino Estudio project 6"
             >
 
-            <span class="play" aria-hidden="true">
+            <span
+              class="play"
+              aria-hidden="true"
+            >
               <span class="play-icon"></span>
             </span>
 
@@ -258,7 +511,10 @@
   </main>
 
 
-  <!-- FIXED CONTACT -->
+  <!-- =====================================================
+       FIXED CONTACT
+       ===================================================== -->
+
   <footer class="site-contact">
 
     <a href="mailto:adrian@sobrinoestudio.com">
@@ -280,7 +536,10 @@
   </footer>
 
 
-  <!-- VIDEO MODAL -->
+  <!-- =====================================================
+       VIDEO MODAL
+       ===================================================== -->
+
   <div
     class="video-modal"
     id="videoModal"
@@ -291,6 +550,7 @@
       class="video-backdrop"
       data-close="true"
     ></div>
+
 
     <div
       class="video-dialog"
@@ -307,6 +567,7 @@
       >
         Close
       </button>
+
 
       <div class="video-frame">
 
@@ -326,7 +587,10 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
   <script>
 
     const modal =
@@ -341,6 +605,16 @@
     const closeButtons =
       document.querySelectorAll("[data-close]");
 
+    const brand =
+      document.querySelector(".brand");
+
+    const contact =
+      document.querySelector(".site-contact");
+
+
+    /* -----------------------------------------------------
+       VIDEO OPEN
+       ----------------------------------------------------- */
 
     function openVideo(id) {
 
@@ -360,6 +634,10 @@
 
     }
 
+
+    /* -----------------------------------------------------
+       VIDEO CLOSE
+       ----------------------------------------------------- */
 
     function closeVideo() {
 
@@ -381,6 +659,10 @@
     }
 
 
+    /* -----------------------------------------------------
+       OPEN PROJECTS
+       ----------------------------------------------------- */
+
     openButtons.forEach((button) => {
 
       button.addEventListener(
@@ -397,6 +679,10 @@
     });
 
 
+    /* -----------------------------------------------------
+       CLOSE VIDEO
+       ----------------------------------------------------- */
+
     closeButtons.forEach((button) => {
 
       button.addEventListener(
@@ -406,6 +692,10 @@
 
     });
 
+
+    /* -----------------------------------------------------
+       ESCAPE KEY
+       ----------------------------------------------------- */
 
     document.addEventListener(
       "keydown",
@@ -422,6 +712,94 @@
 
       }
     );
+
+
+    /* -----------------------------------------------------
+       LIQUID GLASS SCROLL RESPONSE
+       ----------------------------------------------------- */
+
+    let ticking = false;
+
+
+    function updateGlass() {
+
+      const scrollY =
+        window.scrollY || 0;
+
+      const cycle =
+        scrollY % window.innerHeight;
+
+      const progress =
+        cycle / window.innerHeight;
+
+      /*
+       * Subtle movement only.
+       * The interface remains visually fixed,
+       * but the glass reacts slightly to scrolling.
+       */
+
+      const lift =
+        Math.sin(progress * Math.PI * 2) * 2.5;
+
+      const blur =
+        18 +
+        Math.sin(progress * Math.PI * 2) * 3;
+
+      if (brand) {
+
+        brand.style.setProperty(
+          "--glass-lift",
+          `${lift}px`
+        );
+
+        brand.style.setProperty(
+          "--glass-blur",
+          `${blur}px`
+        );
+
+      }
+
+
+      if (contact) {
+
+        contact.style.setProperty(
+          "--glass-lift",
+          `${-lift}px`
+        );
+
+        contact.style.setProperty(
+          "--glass-blur",
+          `${blur}px`
+        );
+
+      }
+
+
+      ticking = false;
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (!ticking) {
+
+          window.requestAnimationFrame(
+            updateGlass
+          );
+
+          ticking = true;
+
+        }
+
+      },
+      { passive: true }
+    );
+
+
+    updateGlass();
 
   </script>
 
