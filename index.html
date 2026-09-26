@@ -15,14 +15,22 @@
 
   <title>Sobrino Estudio — Producción audiovisual</title>
 
-  <!-- FAVICON -->
+
+  <!-- =====================================================
+       FAVICON
+       ===================================================== -->
+
   <link
     rel="icon"
     type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2F0EF'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='48' font-weight='500' fill='%23111111'%3ES%3C/text%3E%3C/svg%3E"
   >
 
-  <!-- FONT -->
+
+  <!-- =====================================================
+       FONT
+       ===================================================== -->
+
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -39,244 +47,156 @@
     rel="stylesheet"
   >
 
-  <!-- EXISTING CSS -->
+
+  <!-- =====================================================
+       CSS
+       ===================================================== -->
+
   <link
     rel="stylesheet"
     href="style.css"
   >
 
+
   <!-- =====================================================
-       LIQUID GLASS OVERRIDES
+       TEXT EFFECT
        ===================================================== -->
 
   <style>
 
-    /* -----------------------------------------------------
-       GLASS TOKENS
-       ----------------------------------------------------- */
-
-    :root {
-      --glass-white: rgba(255, 255, 255, 0.92);
-      --glass-soft: rgba(255, 255, 255, 0.10);
-      --glass-border: rgba(255, 255, 255, 0.20);
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER / BRAND
-       ----------------------------------------------------- */
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-
-      padding: 8px 14px 10px;
-
-      border-radius: 18px;
-
-      color: var(--glass-white);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.17),
-          rgba(255, 255, 255, 0.035)
-        );
-
-      border:
-        1px solid var(--glass-border);
-
-      backdrop-filter:
-        blur(18px)
-        saturate(150%);
-
-      -webkit-backdrop-filter:
-        blur(18px)
-        saturate(150%);
-
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.22),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.06),
-        0 8px 30px rgba(0, 0, 0, 0.08);
-
-      text-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.18);
-
-      transition:
-        background 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease,
-        transform 0.2s ease;
-    }
-
-
-    .brand::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      border-radius: inherit;
-
-      background:
-        linear-gradient(
-          115deg,
-          rgba(255, 255, 255, 0.22),
-          transparent 35%,
-          transparent 65%,
-          rgba(255, 255, 255, 0.08)
-        );
-
-      opacity: 0.55;
-
-      pointer-events: none;
-    }
-
-
-    /* -----------------------------------------------------
-       CONTACT
-       ----------------------------------------------------- */
-
-    .site-contact {
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 8px 14px 9px;
-
-      border-radius: 18px;
-
-      color: var(--glass-white);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.15),
-          rgba(255, 255, 255, 0.035)
-        );
-
-      border:
-        1px solid var(--glass-border);
-
-      backdrop-filter:
-        blur(18px)
-        saturate(150%);
-
-      -webkit-backdrop-filter:
-        blur(18px)
-        saturate(150%);
-
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.20),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.05),
-        0 8px 30px rgba(0, 0, 0, 0.08);
-
-      text-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.18);
-
-      transition:
-        background 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease,
-        transform 0.2s ease;
-    }
-
-
-    .site-contact::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      border-radius: inherit;
-
-      background:
-        linear-gradient(
-          110deg,
-          rgba(255, 255, 255, 0.18),
-          transparent 32%,
-          transparent 66%,
-          rgba(255, 255, 255, 0.06)
-        );
-
-      opacity: 0.5;
-
-      pointer-events: none;
-    }
-
-
-    /* -----------------------------------------------------
-       SCROLL-BASED GLASS MOVEMENT
-       ----------------------------------------------------- */
+    /*
+     * Elimina cualquier resto del antiguo Liquid Glass
+     */
 
     .brand,
     .site-contact {
-      --glass-lift: 0px;
-      --glass-blur: 18px;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+
+      /*
+       * El color de las letras reacciona
+       * al contenido que hay debajo.
+       */
+      color: #ffffff !important;
+      mix-blend-mode: difference;
+
+      text-shadow: none !important;
     }
 
 
-    body.glass-scroll .brand {
-      transform:
-        translateY(var(--glass-lift))
-        translateZ(0);
+    /*
+     * El nombre mantiene su posición fija
+     */
+    .brand {
+      position: absolute !important;
+      top: 28px;
+      left: 28px;
+
+      z-index: 60;
     }
 
 
-    body.glass-scroll .site-contact {
-      transform:
-        translateX(-50%)
-        translateY(var(--glass-lift))
-        translateZ(0);
+    /*
+     * El contacto mantiene una sola línea
+     * y permanece centrado abajo.
+     */
+    .site-contact {
+      position: fixed !important;
+
+      left: 50% !important;
+      right: auto !important;
+      bottom: 28px !important;
+
+      transform: translateX(-50%) !important;
+
+      display: flex !important;
+      flex-direction: row !important;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      gap: 18px !important;
+
+      width: max-content !important;
+      max-width: calc(100% - 32px) !important;
+
+      white-space: nowrap !important;
+
+      font-size: clamp(11px, 1.25vw, 18px) !important;
+      line-height: 1 !important;
+      font-weight: 500 !important;
+
+      letter-spacing: -0.025em !important;
+      text-align: center !important;
+
+      z-index: 60;
     }
 
 
-    /* -----------------------------------------------------
-       ACCESSIBILITY
-       ----------------------------------------------------- */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .brand,
-      .site-contact {
-        transition: none;
-        transform: none !important;
-      }
-
+    /*
+     * Los enlaces mantienen el mismo efecto
+     * y no añaden fondos.
+     */
+    .site-contact a {
+      background: transparent !important;
+      mix-blend-mode: difference;
+      color: #ffffff !important;
+      text-shadow: none !important;
     }
 
 
-    /* -----------------------------------------------------
-       MOBILE
-       ----------------------------------------------------- */
+    /*
+     * Sin animaciones visuales en el texto.
+     */
+    .brand,
+    .site-contact,
+    .site-contact a {
+      transition: none !important;
+    }
 
+
+    /*
+     * Móvil
+     */
     @media (max-width: 700px) {
 
       .brand {
-        padding: 6px 10px 8px;
+        top: 20px;
+        left: 16px;
 
-        border-radius: 14px;
+        font-size: clamp(25px, 8vw, 42px);
       }
 
 
       .site-contact {
-        padding: 6px 10px 7px;
+        left: 50% !important;
+        right: auto !important;
 
-        border-radius: 14px;
+        bottom: 18px !important;
 
-        gap: 9px;
+        gap: 9px !important;
+
+        max-width: calc(100% - 24px) !important;
+
+        font-size: clamp(9px, 2.6vw, 13px) !important;
+
+        letter-spacing: -0.02em !important;
       }
 
     }
 
   </style>
+
 </head>
 
 
-<body class="glass-scroll">
+<body>
+
 
   <!-- =====================================================
        FIXED HEADER
@@ -296,7 +216,7 @@
 
 
   <!-- =====================================================
-       WORK
+       PROJECTS
        ===================================================== -->
 
   <main>
@@ -308,8 +228,11 @@
     >
 
 
-      <!-- PROJECT 1 -->
-      <!-- imagen3.jpg / Vimeo 1091736244 -->
+      <!-- =================================================
+           PROJECT 1
+           imagen3.jpg
+           Vimeo 1091736244
+           ================================================= -->
 
       <article class="project">
 
@@ -341,8 +264,11 @@
       </article>
 
 
-      <!-- PROJECT 2 -->
-      <!-- imagen2.jpg / Vimeo 1190064073 -->
+      <!-- =================================================
+           PROJECT 2
+           imagen2.jpg
+           Vimeo 1190064073
+           ================================================= -->
 
       <article class="project">
 
@@ -374,8 +300,11 @@
       </article>
 
 
-      <!-- PROJECT 3 -->
-      <!-- imagen1.jpg / Vimeo 1190068384 -->
+      <!-- =================================================
+           PROJECT 3
+           imagen1.jpg
+           Vimeo 1190068384
+           ================================================= -->
 
       <article class="project">
 
@@ -407,8 +336,11 @@
       </article>
 
 
-      <!-- PROJECT 4 -->
-      <!-- imagen4.jpg / Vimeo 1037787171 -->
+      <!-- =================================================
+           PROJECT 4
+           imagen4.jpg
+           Vimeo 1037787171
+           ================================================= -->
 
       <article class="project">
 
@@ -440,8 +372,11 @@
       </article>
 
 
-      <!-- PROJECT 5 -->
-      <!-- imagen5.jpg / Vimeo 1230478090 -->
+      <!-- =================================================
+           PROJECT 5
+           imagen5.jpg
+           Vimeo 1230478090
+           ================================================= -->
 
       <article class="project">
 
@@ -473,15 +408,18 @@
       </article>
 
 
-      <!-- PROJECT 6 -->
-      <!-- imagen6.jpg / Vimeo 709491830 -->
+      <!-- =================================================
+           PROJECT 6
+           imagen6.jpg
+           Vimeo 1230486683
+           ================================================= -->
 
       <article class="project">
 
         <button
           class="project-link"
           type="button"
-          data-vimeo="709491830"
+          data-vimeo="1230486683"
           aria-label="Open project 6"
         >
 
@@ -517,7 +455,9 @@
 
   <footer class="site-contact">
 
-    <a href="mailto:adrian@sobrinoestudio.com">
+    <a
+      href="mailto:adrian@sobrinoestudio.com"
+    >
       adrian@sobrinoestudio.com
     </a>
 
@@ -529,7 +469,9 @@
       @adrisobrino
     </a>
 
-    <a href="tel:+34670359658">
+    <a
+      href="tel:+34670359658"
+    >
       670 359 658
     </a>
 
@@ -605,15 +547,9 @@
     const closeButtons =
       document.querySelectorAll("[data-close]");
 
-    const brand =
-      document.querySelector(".brand");
-
-    const contact =
-      document.querySelector(".site-contact");
-
 
     /* -----------------------------------------------------
-       VIDEO OPEN
+       OPEN VIDEO
        ----------------------------------------------------- */
 
     function openVideo(id) {
@@ -636,7 +572,7 @@
 
 
     /* -----------------------------------------------------
-       VIDEO CLOSE
+       CLOSE VIDEO
        ----------------------------------------------------- */
 
     function closeVideo() {
@@ -660,7 +596,7 @@
 
 
     /* -----------------------------------------------------
-       OPEN PROJECTS
+       PROJECT BUTTONS
        ----------------------------------------------------- */
 
     openButtons.forEach((button) => {
@@ -680,7 +616,7 @@
 
 
     /* -----------------------------------------------------
-       CLOSE VIDEO
+       CLOSE BUTTONS
        ----------------------------------------------------- */
 
     closeButtons.forEach((button) => {
@@ -694,7 +630,7 @@
 
 
     /* -----------------------------------------------------
-       ESCAPE KEY
+       ESCAPE
        ----------------------------------------------------- */
 
     document.addEventListener(
@@ -712,94 +648,6 @@
 
       }
     );
-
-
-    /* -----------------------------------------------------
-       LIQUID GLASS SCROLL RESPONSE
-       ----------------------------------------------------- */
-
-    let ticking = false;
-
-
-    function updateGlass() {
-
-      const scrollY =
-        window.scrollY || 0;
-
-      const cycle =
-        scrollY % window.innerHeight;
-
-      const progress =
-        cycle / window.innerHeight;
-
-      /*
-       * Subtle movement only.
-       * The interface remains visually fixed,
-       * but the glass reacts slightly to scrolling.
-       */
-
-      const lift =
-        Math.sin(progress * Math.PI * 2) * 2.5;
-
-      const blur =
-        18 +
-        Math.sin(progress * Math.PI * 2) * 3;
-
-      if (brand) {
-
-        brand.style.setProperty(
-          "--glass-lift",
-          `${lift}px`
-        );
-
-        brand.style.setProperty(
-          "--glass-blur",
-          `${blur}px`
-        );
-
-      }
-
-
-      if (contact) {
-
-        contact.style.setProperty(
-          "--glass-lift",
-          `${-lift}px`
-        );
-
-        contact.style.setProperty(
-          "--glass-blur",
-          `${blur}px`
-        );
-
-      }
-
-
-      ticking = false;
-
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (!ticking) {
-
-          window.requestAnimationFrame(
-            updateGlass
-          );
-
-          ticking = true;
-
-        }
-
-      },
-      { passive: true }
-    );
-
-
-    updateGlass();
 
   </script>
 
